@@ -24,7 +24,7 @@ public class Camera {
 
     public final ArrayList<Integer> possibleIso = new ArrayList<>(Arrays.asList(160, 200, 250, 320, 400, 500, 640, 800, 1000, 1250,
             1600, 2000, 2500, 3200, 4000, 5000, 6400, 8000, 10000, 12800));
-    public final ArrayList<Double> possibleAperature = new ArrayList<Double>(Arrays.asList(2.0, 2.2, 2.5, 2.8, 3.2, 3.6, 4.0, 4.5,
+    public final ArrayList<Double> possibleAperture = new ArrayList<Double>(Arrays.asList(2.0, 2.2, 2.5, 2.8, 3.2, 3.6, 4.0, 4.5,
             5.0, 5.6, 6.4, 7.1, 8.0, 9.0, 10.0, 11.0, 13.0, 14.0, 16.0));
 
 
@@ -130,7 +130,7 @@ public class Camera {
         this.occupiedSpace += occupiedSpace;
     }
 
-    public void loseBattey(double percentage) {
+    public void loseBattery(double percentage) {
         this.battery -= percentage;
     }
 

@@ -8,10 +8,10 @@ public class Image {
     private FileFormat fileFormat;
     private LocalDate takenDate;
     private double fileSize;
-    private double aperture;
-    private String shutterSpeedLabel;
-    private double focalLength;
     private int iso;
+    private String shutterSpeedLabel;
+    private double aperture;
+    private double focalLength;
 
     public Image(int id, FileFormat fileFormat, LocalDate takenDate, double focalLength, double fileSize, double aperture, ShutterSpeed shutterSpeed, int iso) {
         this.id = id;
@@ -19,10 +19,10 @@ public class Image {
         this.fileFormat = fileFormat;
         this.takenDate = takenDate;
         this.fileSize = fileSize;
-        this.aperture = aperture;
-        this.shutterSpeedLabel = shutterSpeed.getLabel();
-        this.focalLength = focalLength;
         this.iso = iso;
+        this.shutterSpeedLabel = shutterSpeed.getLabel();
+        this.aperture = aperture;
+        this.focalLength = focalLength;
     }
 
     public void setFileName(String fileName) {
@@ -49,19 +49,19 @@ public class Image {
         return fileSize;
     }
 
-    public double getAperture() {
-        return aperture;
+    public int getIso() {
+        return iso;
     }
 
     public String getShutterSpeedLabel() {
         return shutterSpeedLabel;
     }
 
-    public double getFocalLength() {
-        return focalLength;
+    public double getAperture() {
+        return aperture;
     }
 
-    public int getIso() {
-        return iso;
+    public double getFocalLength() {
+        return focalLength;
     }
 }

@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class CameraService {
     private final Camera camera;
-    private final AtomicInteger idCounter = new AtomicInteger(1);
+    private final AtomicInteger idCounter = new AtomicInteger(0);
 
     public CameraService() {
         this.camera = new Camera(35, -0.33, 128);
@@ -20,7 +20,7 @@ public class CameraService {
     public void takePhoto(){
         if(camera.getMode() == CameraMode.ALL_AUTO){
             setAutoIso();
-            setAutoAperature();
+            setAutoAperture();
             setAutoShutterSpeed();
         }
 
@@ -29,7 +29,7 @@ public class CameraService {
         double size = Math.round(rand.nextDouble(2) * 100.0) / 100.0;
         if(camera.getOccupiedSpace() + size < camera.getSdSize() && camera.getBattery() > 5) {
             camera.addToOccupiedSpace(size);
-            camera.loseBattey(rand.nextDouble(3));
+            camera.loseBattery(rand.nextDouble(3));
 
             camera.addPhoto(new Image(
                     idCounter.getAndIncrement(),
@@ -72,7 +72,7 @@ public class CameraService {
             }
 
             if (camera.getMode() == CameraMode.AUTO_APERTURE) {
-                setAutoAperature();
+                setAutoAperture();
             }
         }
     }
@@ -100,7 +100,7 @@ public class CameraService {
             }
 
             if(camera.getMode() == CameraMode.AUTO_APERTURE) {
-                setAutoAperature();
+                setAutoAperture();
             }
         }
     }
@@ -111,10 +111,10 @@ public class CameraService {
         camera.setIso(camera.possibleIso.get(id));
     }
 
-    public void setAutoAperature(){
+    public void setAutoAperture(){
         var rand = new Random();
-        int id = rand.nextInt(camera.possibleAperature.size());
-        camera.setAperture(camera.possibleAperature.get(id));
+        int id = rand.nextInt(camera.possibleAperture.size());
+        camera.setAperture(camera.possibleAperture.get(id));
     }
 
     public void setAutoShutterSpeed() {
