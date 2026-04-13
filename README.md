@@ -1,5 +1,5 @@
 # Camera-simulator-API
-It’s a Java and Spring Boot-based REST API, built with Maven, that simulates the real digital camera. User can take simulated photos, download the whole gallery, changing basic settings or switch between different shooting modes. The application simulates also battery level and memory card capacity.
+It’s a Java and Spring Boot-based REST API, built with Maven, that simulates the real digital camera. User can take simulated photos, download the whole gallery, changing basic settings or switch between different shooting modes. This application also simulates battery level and memory card capacity.
 
 ## How to run
 In desired directory paste the commands listed below:
